@@ -2,7 +2,7 @@
 
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
   for color in '' '-Dark'; do
-    for type in '' '-Nord' '-Dracula'; do
+    for type in '' '-Nord' '-Dracula' '-Catppuccin'; do
       if [[ "$color" == '' ]]; then
         case "$theme" in
           '')
@@ -101,6 +101,39 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
               ;;
           esac
         fi
+
+        if [[ "$type" == '-Catppuccin' ]]; then
+          case "$theme" in
+            '')
+              theme_color='#cba6f7'
+              ;;
+            -Purple)
+              theme_color='#cba6f7'
+              ;;
+            -Pink)
+              theme_color='#f5c2e7'
+              ;;
+            -Red)
+              theme_color='#f38ba8'
+              ;;
+            -Orange)
+              theme_color='#fab387'
+              ;;
+            -Yellow)
+              theme_color='#f9e2af'
+              ;;
+            -Green)
+              theme_color='#a6e3a1'
+              ;;
+            -Teal)
+              theme_color='#94e2d5'
+              ;;
+            -Grey)
+              theme_color='#a6adc8'
+              ;;
+          esac
+        fi
+
       else
         case "$theme" in
           '')

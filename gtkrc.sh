@@ -107,6 +107,39 @@ make_gtkrc() {
           ;;
       esac
     fi
+
+    if [[ "$ctype" == '-Catppuccin' ]]; then
+      case "$theme" in
+        '')
+          theme_color='#cba6f7'
+          ;;
+        -Purple)
+          theme_color='#cba6f7'
+          ;;
+        -Pink)
+          theme_color='#f5c2e7'
+          ;;
+        -Red)
+          theme_color='#f38ba8'
+          ;;
+        -Orange)
+          theme_color='#fab387'
+          ;;
+        -Yellow)
+          theme_color='#f9e2af'
+          ;;
+        -Green)
+          theme_color='#a6e3a1'
+          ;;
+        -Teal)
+          theme_color='#94e2d5'
+          ;;
+        -Grey)
+          theme_color='#a6adc8'
+          ;;
+      esac
+    fi
+
   else
     case "$theme" in
       '')
@@ -255,6 +288,14 @@ make_gtkrc() {
         background_alt='#3c3f51'
         titlebar_light='#f0f1f4'
         titlebar_dark='#1f2029'
+        ;;
+      -Catppuccin)
+        background_light='#cdd6f4'
+        background_dark='#1e1e2e'
+        background_darker='#181825'
+        background_alt='#6c7086'
+        titlebar_light='#cdd6f4'
+        titlebar_dark='#1e1e2e'
         ;;
     esac
   fi

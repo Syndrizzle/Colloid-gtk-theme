@@ -7,7 +7,7 @@ INDEX="assets.txt"
 
 for i in `cat $INDEX`; do
   for color in '' '-Light'; do
-    for theme in '' '-Nord' '-Dracula'; do
+    for theme in '' '-Nord' '-Dracula' '-Catppuccin'; do
       for window in '' '-Normal'; do
         for screen in '' '-hdpi' '-xhdpi'; do
           ASSETS_DIR="assets${color}${theme}${window}${screen}"

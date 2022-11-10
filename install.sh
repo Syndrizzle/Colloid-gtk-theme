@@ -327,6 +327,12 @@ while [[ $# -gt 0 ]]; do
             echo -e "Dracula ColorScheme version! ..."
             shift
             ;;
+          catppuccin)
+            catppuccin="true"
+            ctype="-Catppuccin"
+            echo -e "Catppuccin ColorScheme version! ..."
+            shift
+            ;;
           black)
             blackness="true"
             echo -e "Blackness version! ..."
@@ -423,6 +429,11 @@ dracula_color() {
   sed -i "/\$colorscheme:/s/default/dracula/" ${SRC_DIR}/sass/_tweaks-temp.scss
 }
 
+catppuccin_color() {
+  sed -i "/\@import/s/color-palette-default/color-palette-catppuccin/" ${SRC_DIR}/sass/_tweaks-temp.scss
+  sed -i "/\$colorscheme:/s/default/catppuccin/" ${SRC_DIR}/sass/_tweaks-temp.scss
+}
+
 blackness_color() {
   sed -i "/\$blackness:/s/false/true/" ${SRC_DIR}/sass/_tweaks-temp.scss
 }
@@ -493,6 +504,10 @@ theme_tweaks() {
 
   if [[ "$dracula" = "true" ]] ; then
     dracula_color
+  fi
+  
+  if [[ "$catppuccin" = "true" ]] ; then
+    catppuccin_color
   fi
 
   if [[ "$blackness" = "true" ]] ; then
@@ -565,7 +580,7 @@ clean_theme() {
   for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-grey'; do
     for color in '' '-light' '-dark'; do
       for size in '' '-compact'; do
-        for type in '' '-nord' '-dracula'; do
+        for type in '' '-nord' '-dracula' '-catppuccin'; do
           for screen in '' '-hdpi' '-xhdpi'; do
             clean "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}" "${size}" "${type}" "${screen}"
           done
