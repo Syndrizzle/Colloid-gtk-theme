@@ -2,7 +2,7 @@
 
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
   for color in '' '-Dark'; do
-    for type in '' '-Nord' '-Dracula' '-Catppuccin'; do
+    for type in '' '-Nord' '-Dracula' '-Catppuccin-mocha'; do
       if [[ "$color" == '' ]]; then
         case "$theme" in
           '')
@@ -102,7 +102,7 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
           esac
         fi
 
-        if [[ "$type" == '-Catppuccin' ]]; then
+        if [[ "$type" == '-Catppuccin-mocha:' ]]; then
           case "$theme" in
             '')
               theme_color='#cba6f7'

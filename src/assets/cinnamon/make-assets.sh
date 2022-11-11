@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
-  for type in '' '-Nord' '-Dracula' '-Catppuccin'; do
+  for type in '' '-Nord' '-Dracula' '-Catppuccin-mocha'; do
     case "$theme" in
       '')
         theme_color_dark='#3c84f7'
@@ -123,7 +123,7 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
       esac
     fi
 
-    if [[ "$type" == '-Catppuccin' ]]; then
+    if [[ "$type" == '-Catppuccin-mocha' ]]; then
       case "$theme" in
         '')
           theme_color_dark='#cba6f7'

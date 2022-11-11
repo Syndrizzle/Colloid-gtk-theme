@@ -108,7 +108,7 @@ make_gtkrc() {
       esac
     fi
 
-    if [[ "$ctype" == '-Catppuccin' ]]; then
+    if [[ "$ctype" == '-Catppuccin-mocha' ]]; then
       case "$theme" in
         '')
           theme_color='#cba6f7'
@@ -289,7 +289,7 @@ make_gtkrc() {
         titlebar_light='#f0f1f4'
         titlebar_dark='#1f2029'
         ;;
-      -Catppuccin)
+      -Catppuccin-mocha)
         background_light='#cdd6f4'
         background_dark='#1e1e2e'
         background_darker='#181825'
