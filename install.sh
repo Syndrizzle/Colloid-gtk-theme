@@ -333,6 +333,12 @@ while [[ $# -gt 0 ]]; do
             echo -e "Catppuccin Mocha ColorScheme version! ..."
             shift
             ;;
+          catppuccin-macchiato)
+            catppuccinmacchiato="true"
+            ctype="-Catppuccin-macchiato"
+            echo -e "Catppuccin Macchiato ColorScheme version! ..."
+            shift 
+            ;;
           black)
             blackness="true"
             echo -e "Blackness version! ..."
@@ -434,6 +440,11 @@ catppuccin_mocha_color() {
   sed -i "/\$colorscheme:/s/default/catppuccin-mocha/" ${SRC_DIR}/sass/_tweaks-temp.scss
 }
 
+catppuccin_macchiato_color() {
+  sed -i "/\@import/s/color-palette-default/color-palette-catppuccin-macchiato/" ${SRC_DIR}/sass/_tweaks-temp.scss
+  sed -i "/\$colorscheme:/s/default/catppuccin-macchiato/" ${SRC_DIR}/sass/_tweaks-temp.scss
+}
+
 blackness_color() {
   sed -i "/\$blackness:/s/false/true/" ${SRC_DIR}/sass/_tweaks-temp.scss
 }
@@ -509,6 +520,9 @@ theme_tweaks() {
   if [[ "$catppuccinmocha" = "true" ]] ; then
     catppuccin_mocha_color
   fi
+  if [[ "$catppuccinmacchiato" = "true" ]] ; then 
+    catppuccin_macchiato_color
+  fi 
 
   if [[ "$blackness" = "true" ]] ; then
     blackness_color
@@ -580,7 +594,7 @@ clean_theme() {
   for theme in '' '-purple' '-pink' '-red' '-orange' '-yellow' '-green' '-teal' '-grey'; do
     for color in '' '-light' '-dark'; do
       for size in '' '-compact'; do
-        for type in '' '-nord' '-dracula' '-catppuccin-mocha'; do
+        for type in '' '-nord' '-dracula' '-catppuccin-mocha' '-catppuccin-macchiato'; do
           for screen in '' '-hdpi' '-xhdpi'; do
             clean "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${theme}" "${color}" "${size}" "${type}" "${screen}"
           done
