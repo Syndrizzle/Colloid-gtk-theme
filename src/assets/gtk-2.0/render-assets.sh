@@ -38,7 +38,7 @@ done
 
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
   for color in '' '-Dark'; do
-    for type in '' '-Nord' '-Dracula' '-Catppuccin'; do
+    for type in '' '-Nord' '-Dracula' '-Catppuccin-mocha'; do
       ASSETS_DIR="assets${theme}${color}${type}"
       SRC_FILE="assets${theme}${color}${type}.svg"
 
@@ -69,7 +69,7 @@ done
 
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
   for color in '' '-Dark'; do
-    for type in '' '-Nord' '-Dracula' '-Catppuccin'; do
+    for type in '' '-Nord' '-Dracula' '-Catppuccin-mocha'; do
       if [[ "${theme}" == '' && "${type}" == '' ]]; then
         echo "keep assets${color}.svg file..."
       else
