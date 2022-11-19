@@ -102,75 +102,84 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
           esac
         fi
 
-        if [[ "$type" == '-Catppuccin-mocha:' ]]; then
-          case "$theme" in
-            '')
-              theme_color='#cba6f7'
-              ;;
-            -Purple)
-              theme_color='#cba6f7'
-              ;;
-            -Pink)
-              theme_color='#f5c2e7'
-              ;;
-            -Red)
-              theme_color='#f38ba8'
-              ;;
-            -Orange)
-              theme_color='#fab387'
-              ;;
-            -Yellow)
-              theme_color='#f9e2af'
-              ;;
-            -Green)
-              theme_color='#a6e3a1'
-              ;;
-            -Teal)
-              theme_color='#94e2d5'
-              ;;
-            -Grey)
-              theme_color='#a6adc8'
-              ;;
-          esac
-        fi
-
-      if [[ "$type" == '-Catppuccin-macchiato' ]]; then
-        case "$theme" in
+        if [[ "$type" == '-Catppuccin-mocha' ]]; then
+      case "$theme" in
+        '')
+          theme_color_dark='#cba6f7'
+          theme_color_light='#dbc1f9'
+          ;;
+        -Purple)
+          theme_color_dark='#cba6f7'
+          theme_color_light='#dbc1f9'
+          ;;
+        -Pink)
+          theme_color_dark='#f5c2e7'
+          theme_color_light='#f8d4ee'
+          ;;
+        -Red)
+          theme_color_dark='#f38ba8'
+          theme_color_light='#f7aec2'
+          ;;
+        -Orange)
+          theme_color_dark='#fab387'
+          theme_color_light='#fbcaab'
+          ;;
+        -Yellow)
+          theme_color_dark='#f9e2af'
+          theme_color_light='#fbebc7'
+          ;;
+        -Green)
+          theme_color_dark='#a6e3a1'
+          theme_color_light='#c5ebbd'
+          ;;
+        -Teal)
+          theme_color_dark='#94e2d5'
+          theme_color_light='#b4ebe2'
+          ;;
+        -Grey)
+          theme_color_dark='#a6adc8'
+          theme_color_light='#c1c6d8'
+          ;;
+      esac
+    fi
+    
+    if [[ "$type" == '-Catppuccin-macchiato' ]]; then
+      case "$theme" in
         '')
           theme_color_dark='#c6a0f6'
-          theme_color_light='#e4beff'
+          theme_color_light='#d7bcf9'
           ;;
         -Purple)
           theme_color_dark='#c6a0f6'
-          theme_color_light='#e4beff'
+          theme_color_light='#d7bcf9'
           ;;
         -Pink)
           theme_color_dark='#f5bde6'
-          theme_color_light='#ffdbff'
+          theme_color_light='#f8d1ed'
           ;;
         -Red)
           theme_color_dark='#ed8796'
-          theme_color_light='#ffa5b4'
+          theme_color_light='#f2abb5'
           ;;
         -Orange)
           theme_color_dark='#f5a97f'
-          theme_color_light='#ffc79d'
+          theme_color_light='#f8c3a5'
           ;;
         -Yellow)
           theme_color_dark='#eed49f'
-          theme_color_light='#fff2bd'
+          theme_color_light='#f3e1bc'
           ;;
         -Green)
           theme_color_dark='#a6da95'
-          theme_color_light='#c4f8b3'
+          theme_color_light='#c1e5b5'
           ;;
         -Teal)
           theme_color_dark='#8bd5ca'
-          theme_color_light='#a9f3e8'
+          theme_color_light='#afe2da'
           ;;
         -Grey)
           theme_color_dark='#a5adcb'
-          theme_color_light='#c3cbe9'
+          theme_color_light='#c0c6d0'
           ;;
       esac
     fi
