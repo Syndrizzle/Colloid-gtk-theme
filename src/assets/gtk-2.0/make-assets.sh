@@ -2,7 +2,7 @@
 
 for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-Grey'; do
   for color in '' '-Dark'; do
-    for type in '' '-Nord' '-Dracula' '-Catppuccin-mocha' '-Catppuccin-macchiato'; do
+    for type in '' '-Nord' '-Dracula' '-Catppuccin-mocha' '-Catppuccin-macchiato' '-Catppuccin-frappe'; do
       if [[ "$color" == '' ]]; then
         case "$theme" in
           '')
@@ -283,6 +283,47 @@ for theme in '' '-Purple' '-Pink' '-Red' '-Orange' '-Yellow' '-Green' '-Teal' '-
           esac
         fi
       fi
+
+    if [[ "$type" == '-Catppuccin-frappe' ]]; then
+      case "$theme" in
+        '')
+          theme_color_dark='#ca9ee6'
+          theme_color_light='#ead8f5'
+          ;;
+        -Purple)
+          theme_color_dark='#ca9ee6'
+          theme_color_light='#ead8f5'
+          ;;
+        -Pink)
+          theme_color_dark='#f4b8e4'
+          theme_color_light='#fbe3f4'
+          ;;
+        -Red)
+          theme_color_dark='#e78284'
+          theme_color_light='#f5cdce'
+          ;;
+        -Orange)
+          theme_color_dark='#ef9f76'
+          theme_color_light='#f9d9c8'
+          ;;
+        -Yellow)
+          theme_color_dark='#e5c890'
+          theme_color_light='#f5e9d3'
+          ;;
+        -Green)
+          theme_color_dark='#a6d189'
+          theme_color_light='#dbedd0'
+          ;;
+        -Teal)
+          theme_color_dark='#81c8be'
+          theme_color_light='#cde9e5'
+          ;;
+        -Grey)
+          theme_color_dark='#a5adce'
+          theme_color_light='#c0c6dd'
+          ;;
+      esac
+    fi
 
       if [[ "$type" != '' ]]; then
         cp -r "assets${color}.svg" "assets${theme}${color}${type}.svg"
